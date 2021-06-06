@@ -59,7 +59,7 @@ The architectures supported by this image are:
 
 ## Application Setup
 
-Access the WebUI at <your-ip>:80/443. Follow the installation wizard. For more information, check out [XBackBone](https://github.com/SergiX44/XBackBone).
+Access the WebUI at \<your-ip>:80/443. Follow the installation wizard. For more information, check out [XBackBone](https://github.com/SergiX44/XBackBone).
 
 If you want to change the PHP max upload size you can override the php.ini file by adding options in `/config/php/php-local.ini`
 
