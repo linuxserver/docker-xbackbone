@@ -19,7 +19,6 @@ param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
   - { vol_path: "/config", vol_host_path: "<path to data on host>", desc: "config directory volume mapping" }
-  - { vol_path: "/data", vol_host_path: "<path to data on host>", desc: "data directory volume mapping" }
 param_usage_include_env: true
 param_env_vars:
   - { env_var: "TZ", env_value: "<TZ>", desc: "Timezone (i.e., America/New_York)" }
