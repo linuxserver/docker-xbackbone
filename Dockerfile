@@ -10,10 +10,10 @@ LABEL maintainer="gilbn"
 RUN \
   echo "**** install build packages ****" && \
     apk add --no-cache --virtual=build-dependencies \
-    composer \
-    curl && \
+    composer && \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
+    curl \
     php7 \
     php7-sqlite3 \
     php7-mysqli \
