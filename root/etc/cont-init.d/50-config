@@ -6,7 +6,6 @@ mkdir -p /config/www/xbackbone
 # copy xbackbone files
 if [ ! -e "/config/www/xbackbone/index.php" ]; then
     cp -R /app/xbackbone/* /config/www/xbackbone
-    rm -rf /app/xbackbone
 fi
 
 # permissions
