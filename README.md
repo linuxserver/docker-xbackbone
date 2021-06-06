@@ -59,18 +59,7 @@ The architectures supported by this image are:
 
 ## Application Setup
 
-Access the WebUI at \<your-ip>:80/443. Follow the installation wizard. For more information, check out [XBackBone](https://github.com/SergiX44/XBackBone).
-
-If you want to change the PHP max upload size you can override the php.ini file by adding options in `/config/php/php-local.ini`
-
-Example:
-
-```ini
-  upload_max_filesize = 25M
-  post_max_size = 25M
-```
-
-For reverse proxying, remember to change the `base_url` in `/config/www/xbackbone/config.php` to your domain if you initially set up the application with a local url. E.g. `'base_url' => 'https://images.yourdomain.com',`
+Access the WebUI at <your-ip>:80/443. Follow the installation wizardFor more information, check out [XBackBone](https://github.com/SergiX44/XBackBone).
 
 ## Usage
 
@@ -124,7 +113,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-p 443` | https gui |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
-| `-e TZ=<TZ>` | Timezone (i.e., America/New_York) |
+| `-e TZ=Europe/Oslo` | Timezone (i.e., Europe/Oslo) |
 | `-v /config` | config directory volume mapping |
 
 ## Environment variables from files (Docker secrets)
