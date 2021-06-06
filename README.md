@@ -90,9 +90,9 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=<TZ>
+      - TZ=Europe/Oslo
     volumes:
-      - <path to data on host>:/config
+      - /path/to/data:/config
     ports:
       - 80:80
       - 443:443
@@ -106,10 +106,10 @@ docker run -d \
   --name=xbackbone \
   -e PUID=1000 \
   -e PGID=1000 \
-  -e TZ=<TZ> \
+  -e TZ=Europe/Oslo \
   -p 80:80 \
   -p 443:443 \
-  -v <path to data on host>:/config \
+  -v /path/to/data:/config \
   --restart unless-stopped \
   ghcr.io/linuxserver/xbackbone
 ```
