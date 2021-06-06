@@ -1,0 +1,41 @@
+server {
+    listen 80;
+
+    listen 443 ssl;
+
+    root /config/www/xbackbone;
+    index index.html index.htm index.php;
+
+    server_name _;
+
+    ssl_certificate /config/keys/cert.crt;
+    ssl_certificate_key /config/keys/cert.key;
+
+    charset utf-8;
+
+    error_page 404 /index.php;
+
+    client_max_body_size 2G;
+
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        fastcgi_param SCRIPT_NAME $fastcgi_script_name;
+        include /etc/nginx/fastcgi_params;
+    }
+
+    autoindex off;
+    location ~ ^\.md {
+        return 404;
+    }
+
+    location ~ ^/(app|bin|bootstrap|resources|storage|vendor|logs) {
+        return 403;
+    }
+}

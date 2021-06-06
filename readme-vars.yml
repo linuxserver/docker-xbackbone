@@ -1,0 +1,39 @@
+---
+
+# project information
+project_name: xbackbone
+project_url: "https://github.com/SergiX44/XBackBone"
+project_logo: ""
+project_blurb: |
+  [{{ project_name|capitalize }}]({{ project_url }}) is an image hosting software that allows you to create a beautiful and full-featured image hosting website on your own server. It's your hosting and your rules, so say goodbye to closures and restrictions.
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+
+# supported architectures
+available_architectures:
+  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
+  - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
+
+# container parameters
+param_container_name: "{{ project_name }}"
+param_usage_include_vols: true
+param_volumes:
+  - { vol_path: "/config", vol_host_path: "<path to data on host>", desc: "config directory volume mapping" }
+  - { vol_path: "/data", vol_host_path: "<path to data on host>", desc: "data directory volume mapping" }
+param_usage_include_env: true
+param_env_vars:
+  - { env_var: "TZ", env_value: "<TZ>", desc: "Timezone (i.e., America/New_York)" }
+
+param_usage_include_ports: true
+param_ports:
+  - { external_port: "80", internal_port: "80", port_desc: "http gui" }
+  - { external_port: "443", internal_port: "443", port_desc: "https gui" }
+
+# application setup block
+app_setup_block_enabled: true
+app_setup_block: |
+  Access the WebUI at <your-ip>:80/443. Follow the installation wizardFor more information, check out [XBackBone](https://github.com/SergiX44/XBackBone).
+
+# changelog
+changelogs:
+  - { date: "06.06.2021:", desc: "Initial Release." }
