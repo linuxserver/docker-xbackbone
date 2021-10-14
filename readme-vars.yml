@@ -49,5 +49,6 @@ app_setup_block: |
 
 # changelog
 changelogs:
-  - { date: "02.08.2022:", desc: "Added note about updating." }
-  - { date: "06.06.2021:", desc: "Initial Release." }
+  - { date: "20.08.22:", desc: "Rebasing to alpine 3.15 with php8. Restructure nginx configs ([see changes announcement](https://info.linuxserver.io/issues/2022-08-20-nginx-base))." }
+  - { date: "02.08.22:", desc: "Added note about updating." }
+  - { date: "06.06.21:", desc: "Initial Release." }

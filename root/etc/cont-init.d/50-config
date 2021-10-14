@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/with-contenv bash
 
 # create folders
 mkdir -p /config/www/xbackbone
