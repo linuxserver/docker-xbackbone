@@ -40,7 +40,7 @@ libsm-1.2.3-r0
 libssl1.1-1.1.1l-r0
 libstdc++-10.2.1_pre1-r3
 libtls-standalone-2.9.1-r1
-libuuid-2.37.3-r0
+libuuid-2.37.4-r0
 libwebp-1.1.0-r0
 libx11-1.7.1-r0
 libxau-1.0.9-r0
