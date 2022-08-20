@@ -238,5 +238,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **02.08.2022:** - Added note about updating.
-* **06.06.2021:** - Initial Release.
+* **20.08.22:** - Rebasing to alpine 3.15 with php8. Restructure nginx configs ([see changes announcement](https://info.linuxserver.io/issues/2022-08-20-nginx-base)).
+* **02.08.22:** - Added note about updating.
+* **06.06.21:** - Initial Release.
