@@ -8,6 +8,11 @@ if [ ! -e "/config/www/xbackbone/index.php" ]; then
     cp -R /app/xbackbone/* /config/www/xbackbone
 fi
 
+# fix breaking location change from PR5
+if [[ $(grep -c "/index.php?\$args =404;" /config/nginx/site-confs/default.conf) -eq 0 ]]; then
+    sed -i $'s|/index.php?\$args =404;|/index.php?\$args;|g' /config/nginx/site-confs/default.conf
+fi
+
 # permissions
 chown -R abc:abc \
     /config
