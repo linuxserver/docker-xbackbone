@@ -10,7 +10,6 @@ LABEL maintainer="gilbn"
 RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
-    curl \
     php8 \
     php8-sqlite3 \
     php8-mysqli \

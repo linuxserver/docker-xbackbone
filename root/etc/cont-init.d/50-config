@@ -1,11 +1,41 @@
 #!/usr/bin/with-contenv bash
 
 # create folders
-mkdir -p /config/www/xbackbone
+mkdir -p /config/www/xbackbone/{storage,logs}
+mkdir -p /config/www/xbackbone/resources/{cache,database,sessions}
 
-# copy xbackbone files
-if [ ! -e "/config/www/xbackbone/index.php" ]; then
-    cp -R /app/xbackbone/* /config/www/xbackbone
+# create symlinks
+ln -s /config/www/xbackbone/config.php /app/xbackbone/config.php
+ln -s /config/www/xbackbone/storage /app/xbackbone/storage
+
+rm -rf /app/xbackbone/logs
+ln -s /config/www/xbackbone/logs /app/xbackbone/logs
+rm -rf /app/xbackbone/resources/cache
+ln -s /config/www/xbackbone/resources/cache /app/xbackbone/resources/cache
+rm -rf /app/xbackbone/resources/database
+ln -s /config/www/xbackbone/resources/database /app/xbackbone/resources/database
+rm -rf /app/xbackbone/resources/sessions
+ln -s /config/www/xbackbone/resources/sessions /app/xbackbone/resources/sessions
+
+# Log migration message
+for dir in /config/www/xbackbone/{app,bin,bootstrap,static,vendor}; do
+    if [[ -d $dir ]]; then
+        dirs+=("$dir")
+    fi
+done
+
+for dir in /config/www/xbackbone/resources/{lang,schemas,templates,uploaders}; do
+    if [[ -d $dir ]]; then
+        dirs+=("$dir")
+    fi
+done
+
+if [[ -n "${dirs}" ]]; then
+    echo "**** Legacy files found in /config/www/xbackbone, these can safely be deleted: ****"
+    for dir in "${dirs[@]}"; do
+        echo "${dir}"
+    done
+    echo "****"
 fi
 
 # fix breaking location change from PR5
