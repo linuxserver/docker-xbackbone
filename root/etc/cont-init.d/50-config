@@ -28,30 +28,32 @@ if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/xbackbone/static
 fi
 
 # Log migration messages
-for dir in /config/www/xbackbone/{app,bin,bootstrap,vendor}; do
-    if [[ -d $dir ]]; then
-        dirs+=("$dir")
-    fi
-done
-
-for dir in /config/www/xbackbone/resources/{lang,schemas,templates,uploaders}; do
-    if [[ -d $dir ]]; then
-        dirs+=("$dir")
-    fi
-done
-
-for dir in /config/www/xbackbone/static/{app,clipboardjs,dropzone,fontawesome,highlightjs,images,jquery,plyr}; do
-    if [[ -d $dir ]]; then
-        dirs+=("$dir")
-    fi
-done
-
-if [[ -n "${dirs}" ]]; then
-    echo "**** Legacy files found in /config/www/xbackbone, these can safely be deleted: ****"
-    for dir in "${dirs[@]}"; do
-        echo "${dir}"
+if grep -q 'root /app/xbackbone;' "/config/nginx/site-confs/default.conf"; then
+    for dir in /config/www/xbackbone/{app,bin,bootstrap,vendor}; do
+        if [[ -d $dir ]]; then
+            dirs+=("$dir")
+        fi
     done
-    echo "****"
+
+    for dir in /config/www/xbackbone/resources/{lang,schemas,templates,uploaders}; do
+        if [[ -d $dir ]]; then
+            dirs+=("$dir")
+        fi
+    done
+
+    for dir in /config/www/xbackbone/static/{app,clipboardjs,dropzone,fontawesome,highlightjs,images,jquery,plyr}; do
+        if [[ -d $dir ]]; then
+            dirs+=("$dir")
+        fi
+    done
+
+    if [[ -n "${dirs}" ]]; then
+        echo "**** Legacy files found in /config/www/xbackbone, these can safely be deleted: ****"
+        for dir in "${dirs[@]}"; do
+            echo "${dir}"
+        done
+        echo "****"
+    fi
 fi
 # End migration messages
 
