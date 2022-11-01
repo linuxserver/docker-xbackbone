@@ -9,7 +9,7 @@ server {
 
     server_name _;
 
-    root /app/xbackbone;
+    root /app/www/public;
     index index.html index.htm index.php;
 
     charset utf-8;

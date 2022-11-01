@@ -5,30 +5,30 @@ mkdir -p /config/www/xbackbone/{storage,logs}
 mkdir -p /config/www/xbackbone/resources/{cache,database,sessions}
 
 # create symlinks
-ln -s /config/www/xbackbone/config.php /app/xbackbone/config.php
-ln -s /config/www/xbackbone/storage /app/xbackbone/storage
+ln -s /config/www/xbackbone/config.php /app/www/public/config.php
+ln -s /config/www/xbackbone/storage /app/www/public/storage
 
-rm -rf /app/xbackbone/logs
-ln -s /config/www/xbackbone/logs /app/xbackbone/logs
-rm -rf /app/xbackbone/resources/cache
-ln -s /config/www/xbackbone/resources/cache /app/xbackbone/resources/cache
-rm -rf /app/xbackbone/resources/database
-ln -s /config/www/xbackbone/resources/database /app/xbackbone/resources/database
-rm -rf /app/xbackbone/resources/sessions
-ln -s /config/www/xbackbone/resources/sessions /app/xbackbone/resources/sessions
+rm -rf /app/www/public/logs
+ln -s /config/www/xbackbone/logs /app/www/public/logs
+rm -rf /app/www/public/resources/cache
+ln -s /config/www/xbackbone/resources/cache /app/www/public/resources/cache
+rm -rf /app/www/public/resources/database
+ln -s /config/www/xbackbone/resources/database /app/www/public/resources/database
+rm -rf /app/www/public/resources/sessions
+ln -s /config/www/xbackbone/resources/sessions /app/www/public/resources/sessions
 
-if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/xbackbone/static/bootstrap"  ]]; then
-    rm -rf "/app/xbackbone/static/bootstrap"
+if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap"  ]]; then
+    rm -rf "/app/www/public/static/bootstrap"
 fi
-if [[ ! -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/xbackbone/static/bootstrap"  ]]; then
-    mv "/app/xbackbone/static/bootstrap" "/config/www/xbackbone/static"
+if [[ ! -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap"  ]]; then
+    mv "/app/www/public/static/bootstrap" "/config/www/xbackbone/static"
 fi
-if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/xbackbone/static/bootstrap"  ]]; then
-    ln -s "/config/www/xbackbone/static/bootstrap" "/app/xbackbone/static/bootstrap"
+if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap"  ]]; then
+    ln -s "/config/www/xbackbone/static/bootstrap" "/app/www/public/static/bootstrap"
 fi
 
 # Log migration messages
-if grep -q 'root /app/xbackbone;' "/config/nginx/site-confs/default.conf"; then
+if grep -q 'root /app/www/public;' "/config/nginx/site-confs/default.conf"; then
     for dir in /config/www/xbackbone/{app,bin,bootstrap,vendor}; do
         if [[ -d $dir ]]; then
             dirs+=("$dir")
