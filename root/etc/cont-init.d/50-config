@@ -21,7 +21,7 @@ if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/stati
     rm -rf "/app/www/public/static/bootstrap"
 fi
 if [[ ! -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap"  ]]; then
-    mv "/app/www/public/static/bootstrap" "/config/www/xbackbone/static"
+    mv "/app/www/public/static/bootstrap" "/config/www/xbackbone/static/bootstrap"
 fi
 if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap"  ]]; then
     ln -s "/config/www/xbackbone/static/bootstrap" "/app/www/public/static/bootstrap"
