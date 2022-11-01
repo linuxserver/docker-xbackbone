@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
 # create folders
-mkdir -p /config/www/xbackbone/{storage,logs}
+mkdir -p /config/www/xbackbone/{storage,logs,static}
 mkdir -p /config/www/xbackbone/resources/{cache,database,sessions}
 
 # create symlinks
