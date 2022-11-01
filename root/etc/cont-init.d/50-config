@@ -17,14 +17,30 @@ ln -s /config/www/xbackbone/resources/database /app/xbackbone/resources/database
 rm -rf /app/xbackbone/resources/sessions
 ln -s /config/www/xbackbone/resources/sessions /app/xbackbone/resources/sessions
 
-# Log migration message
-for dir in /config/www/xbackbone/{app,bin,bootstrap,static,vendor}; do
+if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/xbackbone/static/bootstrap"  ]]; then
+    rm -rf "/app/xbackbone/static/bootstrap"
+fi
+if [[ ! -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/xbackbone/static/bootstrap"  ]]; then
+    mv "/app/xbackbone/static/bootstrap" "/config/www/xbackbone/static"
+fi
+if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/xbackbone/static/bootstrap"  ]]; then
+    ln -s "/config/www/xbackbone/static/bootstrap" "/app/xbackbone/static/bootstrap"
+fi
+
+# Log migration messages
+for dir in /config/www/xbackbone/{app,bin,bootstrap,vendor}; do
     if [[ -d $dir ]]; then
         dirs+=("$dir")
     fi
 done
 
 for dir in /config/www/xbackbone/resources/{lang,schemas,templates,uploaders}; do
+    if [[ -d $dir ]]; then
+        dirs+=("$dir")
+    fi
+done
+
+for dir in /config/www/xbackbone/static/{app,clipboardjs,dropzone,fontawesome,highlightjs,images,jquery,plyr}; do
     if [[ -d $dir ]]; then
         dirs+=("$dir")
     fi
@@ -37,6 +53,7 @@ if [[ -n "${dirs}" ]]; then
     done
     echo "****"
 fi
+# End migration messages
 
 # fix breaking location change from PR5
 if [[ $(grep -c "/index.php?\$args =404;" /config/nginx/site-confs/default.conf) -eq 0 ]]; then
