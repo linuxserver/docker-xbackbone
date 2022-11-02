@@ -73,9 +73,6 @@ Example:
 
 For reverse proxying, remember to change the `base_url` in `/config/www/xbackbone/config.php` to your domain if you initially set up the application with a local url. E.g. `'base_url' => 'https://images.yourdomain.com',`
 
-**Updating**
-  - To update Xbackbone, go to /system and click upgrade if there's a new version available. A container update does not update the Xbackbone application.
-
 ## Usage
 
 Here are some example snippets to help you get started creating a container.
@@ -238,6 +235,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **01.11.22:** - Move application install to /app/www/public, add migration notices for existing users. Container updates should now update the application correctly
 * **20.08.22:** - Rebasing to alpine 3.15 with php8. Restructure nginx configs ([see changes announcement](https://info.linuxserver.io/issues/2022-08-20-nginx-base)).
 * **02.08.22:** - Added note about updating.
 * **06.06.21:** - Initial Release.

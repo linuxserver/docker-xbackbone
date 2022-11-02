@@ -1,12 +1,61 @@
 #!/usr/bin/with-contenv bash
 
 # create folders
-mkdir -p /config/www/xbackbone
+mkdir -p /config/www/xbackbone/{storage,logs,static}
+mkdir -p /config/www/xbackbone/resources/{cache,database,sessions}
 
-# copy xbackbone files
-if [ ! -e "/config/www/xbackbone/index.php" ]; then
-    cp -R /app/xbackbone/* /config/www/xbackbone
+# create symlinks
+ln -s /config/www/xbackbone/config.php /app/www/public/config.php
+ln -s /config/www/xbackbone/storage /app/www/public/storage
+
+rm -rf /app/www/public/logs
+ln -s /config/www/xbackbone/logs /app/www/public/logs
+rm -rf /app/www/public/resources/cache
+ln -s /config/www/xbackbone/resources/cache /app/www/public/resources/cache
+rm -rf /app/www/public/resources/database
+ln -s /config/www/xbackbone/resources/database /app/www/public/resources/database
+rm -rf /app/www/public/resources/sessions
+ln -s /config/www/xbackbone/resources/sessions /app/www/public/resources/sessions
+
+if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap"  ]]; then
+    rm -rf "/app/www/public/static/bootstrap"
 fi
+if [[ ! -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap"  ]]; then
+    mv "/app/www/public/static/bootstrap" "/config/www/xbackbone/static/bootstrap"
+fi
+if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap"  ]]; then
+    ln -s "/config/www/xbackbone/static/bootstrap" "/app/www/public/static/bootstrap"
+fi
+
+# Log migration messages
+if grep -q 'root /app/www/public;' "/config/nginx/site-confs/default.conf"; then
+    for dir in /config/www/xbackbone/{app,bin,bootstrap,vendor}; do
+        if [[ -d $dir ]]; then
+            dirs+=("$dir")
+        fi
+    done
+
+    for dir in /config/www/xbackbone/resources/{lang,schemas,templates,uploaders}; do
+        if [[ -d $dir ]]; then
+            dirs+=("$dir")
+        fi
+    done
+
+    for dir in /config/www/xbackbone/static/{app,clipboardjs,dropzone,fontawesome,highlightjs,images,jquery,plyr}; do
+        if [[ -d $dir ]]; then
+            dirs+=("$dir")
+        fi
+    done
+
+    if [[ -n "${dirs}" ]]; then
+        echo "**** Legacy files found in /config/www/xbackbone, these can safely be deleted: ****"
+        for dir in "${dirs[@]}"; do
+            echo "${dir}"
+        done
+        echo "****"
+    fi
+fi
+# End migration messages
 
 # fix breaking location change from PR5
 if [[ $(grep -c "/index.php?\$args =404;" /config/nginx/site-confs/default.conf) -eq 0 ]]; then
