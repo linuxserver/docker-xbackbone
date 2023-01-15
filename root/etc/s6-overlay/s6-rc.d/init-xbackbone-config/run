@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bash
+# shellcheck shell=bash
 
 # create folders
 mkdir -p /config/www/xbackbone/{storage,logs,static}
@@ -17,13 +18,13 @@ ln -s /config/www/xbackbone/resources/database /app/www/public/resources/databas
 rm -rf /app/www/public/resources/sessions
 ln -s /config/www/xbackbone/resources/sessions /app/www/public/resources/sessions
 
-if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap"  ]]; then
+if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap" ]]; then
     rm -rf "/app/www/public/static/bootstrap"
 fi
-if [[ ! -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap"  ]]; then
+if [[ ! -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap" ]]; then
     mv "/app/www/public/static/bootstrap" "/config/www/xbackbone/static/bootstrap"
 fi
-if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap"  ]]; then
+if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap" ]]; then
     ln -s "/config/www/xbackbone/static/bootstrap" "/app/www/public/static/bootstrap"
 fi
 
