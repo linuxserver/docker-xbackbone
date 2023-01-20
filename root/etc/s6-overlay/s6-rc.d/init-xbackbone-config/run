@@ -64,5 +64,5 @@ if [[ $(grep -c "/index.php?\$args =404;" /config/nginx/site-confs/default.conf)
 fi
 
 # permissions
-chown -R abc:abc \
+lsiown -R abc:abc \
     /config
