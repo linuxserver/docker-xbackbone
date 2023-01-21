@@ -1,4 +1,6 @@
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.16
+# syntax=docker/dockerfile:1
+
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.17
 
 # set version label
 ARG BUILD_DATE
@@ -10,19 +12,16 @@ LABEL maintainer="gilbn"
 RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
-    php8 \
-    php8-sqlite3 \
-    php8-mysqli \
-    php8-pdo_mysql \
-    php8-pdo_sqlite \
-    php8-gd \
-    php8-json \
-    php8-fileinfo \
-    php8-zip \
-    php8-ftp \
-    php8-ldap \
-    php8-tokenizer \
-    php8-intl && \
+    php81-sqlite3 \
+    php81-mysqli \
+    php81-pdo_mysql \
+    php81-pdo_sqlite \
+    php81-gd \
+    php81-zip \
+    php81-ftp \
+    php81-ldap \
+    php81-tokenizer \
+    php81-intl && \
   echo "**** install xbackbone ****" && \
     mkdir -p /app/www/public && \
   if [ -z ${XBACKBONE_RELEASE+x} ]; then \
