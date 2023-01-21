@@ -12,7 +12,6 @@ LABEL maintainer="gilbn"
 RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
-    php81 \
     php81-sqlite3 \
     php81-mysqli \
     php81-pdo_mysql \
