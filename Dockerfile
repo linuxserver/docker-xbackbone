@@ -18,8 +18,6 @@ RUN \
     php81-pdo_mysql \
     php81-pdo_sqlite \
     php81-gd \
-    php81-json \
-    php81-fileinfo \
     php81-zip \
     php81-ftp \
     php81-ldap \
