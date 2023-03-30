@@ -49,7 +49,7 @@ libavif                                 0.11.1-r0              apk
 libbsd                                  0.11.7-r0              apk           
 libbz2                                  1.0.8-r4               apk           
 libc-utils                              0.7.2-r3               apk           
-libcrypto3                              3.0.8-r0               apk           
+libcrypto3                              3.0.8-r1               apk           
 libcurl                                 7.88.1-r1              apk           
 libdav1d                                1.0.0-r2               apk           
 libedit                                 20221030.3.1-r0        apk           
@@ -64,7 +64,7 @@ libpng                                  1.6.38-r0              apk
 libproc                                 3.3.17-r2              apk           
 libsasl                                 2.1.28-r3              apk           
 libsm                                   1.2.3-r1               apk           
-libssl3                                 3.0.8-r0               apk           
+libssl3                                 3.0.8-r1               apk           
 libstdc++                               12.2.1_git20220924-r4  apk           
 libuuid                                 2.38.1-r1              apk           
 libwebp                                 1.2.4-r1               apk           
@@ -95,7 +95,7 @@ nghttp2-libs                            1.51.0-r0              apk
 nginx                                   1.22.1-r0              apk           
 nikic/fast-route                        v1.3.0                 php-composer  
 oniguruma                               6.9.8-r0               apk           
-openssl                                 3.0.8-r1               apk           
+openssl                                 3.0.8-r3               apk           
 opis/closure                            3.6.3                  php-composer  
 pcre                                    8.45-r2                apk           
 pcre2                                   10.42-r0               apk           
@@ -155,7 +155,7 @@ symfony/polyfill-ctype                  v1.27.0                php-composer
 symfony/polyfill-mbstring               v1.27.0                php-composer  
 symfony/polyfill-php72                  v1.27.0                php-composer  
 twig/twig                               v2.15.3                php-composer  
-tzdata                                  2022f-r1               apk           
+tzdata                                  2023b-r1               apk           
 utmps-libs                              0.1.2.0-r1             apk           
 xz                                      5.2.9-r0               apk           
 xz-libs                                 5.2.9-r0               apk           
