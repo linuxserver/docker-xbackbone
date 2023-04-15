@@ -236,6 +236,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **13.04.23:** - Move ssl.conf include to default.conf.
 * **19.01.23:** - Rebase to alpine 3.17 with php8.1.
 * **04.11.22:** - Rebase to Alpine 3.16, migrate to s6v3.
 * **01.11.22:** - Move application install to /app/www/public, add migration notices for existing users. Container updates should now update the application correctly
