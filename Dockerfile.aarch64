@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:arm64v8-3.17
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:arm64v8-3.18
 
 # set version label
 ARG BUILD_DATE
@@ -12,16 +12,15 @@ LABEL maintainer="gilbn"
 RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
-    php81-sqlite3 \
-    php81-mysqli \
-    php81-pdo_mysql \
-    php81-pdo_sqlite \
-    php81-gd \
-    php81-zip \
-    php81-ftp \
-    php81-ldap \
-    php81-tokenizer \
-    php81-intl && \
+    php82-ftp \
+    php82-gd \
+    php82-intl \
+    php82-ldap \
+    php82-mysqli \
+    php82-pdo_mysql \
+    php82-pdo_sqlite \
+    php82-sqlite3 \
+    php82-tokenizer && \
   echo "**** install xbackbone ****" && \
     mkdir -p /app/www/public && \
   if [ -z ${XBACKBONE_RELEASE+x} ]; then \
@@ -34,8 +33,8 @@ RUN \
   unzip -q -o /tmp/xbackbone.zip -d /app/www/public/ && \
   echo "**** cleanup ****" && \
   rm -rf \
-    /root/.cache \
-    /tmp/*
+    /tmp/* \
+    $HOME/.cache
 
 # copy local files
 COPY root/ /
