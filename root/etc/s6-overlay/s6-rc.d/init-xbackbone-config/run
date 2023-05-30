@@ -6,25 +6,45 @@ mkdir -p /config/www/xbackbone/{storage,logs,static}
 mkdir -p /config/www/xbackbone/resources/{cache,database,sessions}
 
 # create symlinks
-ln -s /config/www/xbackbone/config.php /app/www/public/config.php
-ln -s /config/www/xbackbone/storage /app/www/public/storage
+if [[ ! -L "/app/www/public/config.php" ]]; then
+    cp -nR "/app/www/public/config.php" "/config/www/xbackbone/config.php"
+    rm -rf "/app/www/public/config.php"
+    ln -s "/config/www/xbackbone/config.php" "/app/www/public/config.php"
+fi
 
-rm -rf /app/www/public/logs
-ln -s /config/www/xbackbone/logs /app/www/public/logs
-rm -rf /app/www/public/resources/cache
-ln -s /config/www/xbackbone/resources/cache /app/www/public/resources/cache
-rm -rf /app/www/public/resources/database
-ln -s /config/www/xbackbone/resources/database /app/www/public/resources/database
-rm -rf /app/www/public/resources/sessions
-ln -s /config/www/xbackbone/resources/sessions /app/www/public/resources/sessions
+if [[ ! -L "/app/www/public/storage" ]]; then
+    cp -nR "/app/www/public/storage" "/config/www/xbackbone/storage"
+    rm -rf "/app/www/public/storage"
+    ln -s "/config/www/xbackbone/storage" "/app/www/public/storage"
+fi
 
-if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap" ]]; then
+if [[ ! -L "/app/www/public/logs" ]]; then
+    cp -nR "/app/www/public/logs" "/config/www/xbackbone/logs"
+    rm -rf "/app/www/public/logs"
+    ln -s "/config/www/xbackbone/logs" "/app/www/public/logs"
+fi
+
+if [[ ! -L "/app/www/public/resources/cache" ]]; then
+    cp -nR "/app/www/public/resources/cache" "/config/www/xbackbone/resources/cache"
+    rm -rf "/app/www/public/resources/cache"
+    ln -s "/config/www/xbackbone/resources/cache" "/app/www/public/resources/cache"
+fi
+
+if [[ ! -L "/app/www/public/resources/database" ]]; then
+    cp -nR "/app/www/public/resources/database" "/config/www/xbackbone/resources/database"
+    rm -rf "/app/www/public/resources/database"
+    ln -s "/config/www/xbackbone/resources/database" "/app/www/public/resources/database"
+fi
+
+if [[ ! -L "/app/www/public/resources/sessions" ]]; then
+    cp -nR "/app/www/public/resources/sessions" "/config/www/xbackbone/resources/sessions"
+    rm -rf "/app/www/public/resources/sessions"
+    ln -s "/config/www/xbackbone/resources/sessions" "/app/www/public/resources/sessions"
+fi
+
+if [[ ! -L "/app/www/public/static/bootstrap" ]]; then
+    cp -nR "/app/www/public/static/bootstrap" "/config/www/xbackbone/static/bootstrap"
     rm -rf "/app/www/public/static/bootstrap"
-fi
-if [[ ! -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap" ]]; then
-    mv "/app/www/public/static/bootstrap" "/config/www/xbackbone/static/bootstrap"
-fi
-if [[ -d "/config/www/xbackbone/static/bootstrap" && ! -L "/app/www/public/static/bootstrap" ]]; then
     ln -s "/config/www/xbackbone/static/bootstrap" "/app/www/public/static/bootstrap"
 fi
 
@@ -48,7 +68,7 @@ if grep -q 'root /app/www/public;' "/config/nginx/site-confs/default.conf"; then
         fi
     done
 
-    if [[ -n "${dirs}" ]]; then
+    if [[ -n "${dirs[*]}" ]]; then
         echo "**** Legacy files found in /config/www/xbackbone, these can safely be deleted: ****"
         for dir in "${dirs[@]}"; do
             echo "${dir}"
