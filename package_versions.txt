@@ -35,8 +35,8 @@ guzzlehttp/guzzle                       7.7.0                   php-composer
 guzzlehttp/promises                     1.5.3                   php-composer  
 guzzlehttp/psr7                         2.5.0                   php-composer  
 http-interop/http-factory-guzzle        1.2.0                   php-composer  
-icu-data-en                             73.1-r1                 apk           
-icu-libs                                73.1-r1                 apk           
+icu-data-en                             73.2-r0                 apk           
+icu-libs                                73.2-r0                 apk           
 intervention/image                      2.7.2                   php-composer  
 jq                                      1.6-r3                  apk           
 league/flysystem                        1.1.10                  php-composer  
@@ -58,7 +58,7 @@ libgcc                                  12.2.1_git20220924-r10  apk
 libice                                  1.1.1-r2                apk           
 libidn2                                 2.3.4-r1                apk           
 libintl                                 0.21.1-r7               apk           
-libjpeg-turbo                           2.1.5.1-r2              apk           
+libjpeg-turbo                           2.1.5.1-r3              apk           
 libldap                                 2.6.4-r3                apk           
 libmd                                   1.0.4-r2                apk           
 libncursesw                             6.4_p20230506-r0        apk           
@@ -71,7 +71,7 @@ libstdc++                               12.2.1_git20220924-r10  apk
 libunistring                            1.1-r1                  apk           
 libuuid                                 2.38.1-r8               apk           
 libwebp                                 1.3.0-r2                apk           
-libx11                                  1.8.4-r3                apk           
+libx11                                  1.8.4-r4                apk           
 libxau                                  1.0.11-r2               apk           
 libxcb                                  1.15-r1                 apk           
 libxdmcp                                1.1.4-r2                apk           
