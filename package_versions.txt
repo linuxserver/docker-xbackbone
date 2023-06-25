@@ -2,7 +2,7 @@ NAME                                    VERSION                 TYPE
 alpine-baselayout                       3.4.3-r1                apk           
 alpine-baselayout-data                  3.4.3-r1                apk           
 alpine-keys                             2.4-r1                  apk           
-alpine-release                          3.18.0-r0               apk           
+alpine-release                          3.18.2-r0               apk           
 aom-libs                                3.6.1-r0                apk           
 apache2-utils                           2.4.57-r2               apk           
 apk-tools                               2.14.0-r2               apk           
@@ -146,7 +146,7 @@ readline                                8.2.1-r1                apk
 rize/uri-template                       0.3.5                   php-composer  
 sapphirecat/slim4-http-interop-adapter  v1.0.2                  php-composer  
 scanelf                                 1.3.7-r1                apk           
-shadow                                  4.13-r2                 apk           
+shadow                                  4.13-r4                 apk           
 skalibs                                 2.13.1.1-r1             apk           
 slim/psr7                               1.5.1                   php-composer  
 slim/slim                               4.9.0                   php-composer  
