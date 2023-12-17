@@ -18,7 +18,7 @@ busybox-binsh                           1.36.1-r5               apk
 ca-certificates                         20230506-r0             apk           
 ca-certificates-bundle                  20230506-r0             apk           
 coreutils                               9.3-r1                  apk           
-curl                                    8.4.0-r0                apk           
+curl                                    8.5.0-r0                apk           
 erusev/parsedown                        1.7.4                   php-composer  
 fig/http-message-util                   1.1.5                   php-composer  
 firebase/php-jwt                        v6.4.0                  php-composer  
@@ -37,7 +37,7 @@ http-interop/http-factory-guzzle        1.2.0                   php-composer
 icu-data-en                             73.2-r2                 apk           
 icu-libs                                73.2-r2                 apk           
 intervention/image                      2.7.2                   php-composer  
-jq                                      1.6-r3                  apk           
+jq                                      1.6-r4                  apk           
 league/flysystem                        1.1.10                  php-composer  
 league/flysystem-aws-s3-v3              1.0.30                  php-composer  
 league/flysystem-cached-adapter         1.1.0                   php-composer  
@@ -49,7 +49,7 @@ libbsd                                  0.11.7-r1               apk
 libbz2                                  1.0.8-r5                apk           
 libc-utils                              0.7.2-r5                apk           
 libcrypto3                              3.1.4-r1                apk           
-libcurl                                 8.4.0-r0                apk           
+libcurl                                 8.5.0-r0                apk           
 libdav1d                                1.2.1-r0                apk           
 libedit                                 20221030.3.1-r1         apk           
 libexpat                                2.5.0-r1                apk           
