@@ -2,7 +2,7 @@
 # shellcheck shell=bash
 
 # create folders
-mkdir -p /config/www/xbackbone/{storage,logs}
+mkdir -p /config/www/xbackbone/{storage,logs,static}
 mkdir -p /config/www/xbackbone/resources/database
 
 # create symlinks
@@ -36,6 +36,14 @@ if [[ ! -L "/app/www/public/resources/database" ]]; then
     fi
     rm -rf "/app/www/public/resources/database"
     ln -s "/config/www/xbackbone/resources/database" "/app/www/public/resources/database"
+fi
+
+if [[ ! -L "/app/www/public/static/bootstrap" ]]; then
+    if [[ ! -L "/app/www/public/static/bootstrap" ]]; then
+        cp -nR "/app/www/public/static/bootstrap/" "/config/www/xbackbone/static/" 2> >(grep -v 'cp: not replacing')
+    fi
+    rm -rf "/app/www/public/static/bootstrap"
+    ln -s "/config/www/xbackbone/static/bootstrap" "/app/www/public/static/bootstrap"
 fi
 
 # Log migration messages
