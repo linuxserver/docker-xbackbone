@@ -2,8 +2,8 @@
 # shellcheck shell=bash
 
 # create folders
-mkdir -p /config/www/xbackbone/{storage,logs,static}
-mkdir -p /config/www/xbackbone/resources/{cache,database,sessions}
+mkdir -p /config/www/xbackbone/{storage,logs}
+mkdir -p /config/www/xbackbone/resources/database
 
 # create symlinks
 if [[ ! -L "/app/www/public/config.php" ]]; then
@@ -16,7 +16,7 @@ fi
 
 if [[ ! -L "/app/www/public/storage" ]]; then
     if [[ -d "/app/www/public/storage" ]]; then
-        cp -nR "/app/www/public/storage" "/config/www/xbackbone/storage" 2> >(grep -v 'cp: not replacing')
+        cp -nR "/app/www/public/storage/" "/config/www/xbackbone/" 2> >(grep -v 'cp: not replacing')
     fi
     rm -rf "/app/www/public/storage"
     ln -s "/config/www/xbackbone/storage" "/app/www/public/storage"
@@ -24,42 +24,18 @@ fi
 
 if [[ ! -L "/app/www/public/logs" ]]; then
     if [[ -d "/app/www/public/logs" ]]; then
-        cp -nR "/app/www/public/logs" "/config/www/xbackbone/logs" 2> >(grep -v 'cp: not replacing')
+        cp -nR "/app/www/public/logs/" "/config/www/xbackbone/" 2> >(grep -v 'cp: not replacing')
     fi
     rm -rf "/app/www/public/logs"
     ln -s "/config/www/xbackbone/logs" "/app/www/public/logs"
 fi
 
-if [[ ! -L "/app/www/public/resources/cache" ]]; then
-    if [[ -d "/app/www/public/resources/cache" ]]; then
-        cp -nR "/app/www/public/resources/cache" "/config/www/xbackbone/resources/cache" 2> >(grep -v 'cp: not replacing')
-    fi
-    rm -rf "/app/www/public/resources/cache"
-    ln -s "/config/www/xbackbone/resources/cache" "/app/www/public/resources/cache"
-fi
-
 if [[ ! -L "/app/www/public/resources/database" ]]; then
     if [[ -d "/app/www/public/resources/database" ]]; then
-        cp -nR "/app/www/public/resources/database" "/config/www/xbackbone/resources/database" 2> >(grep -v 'cp: not replacing')
+        cp -nR "/app/www/public/resources/database/" "/config/www/xbackbone/resources/" 2> >(grep -v 'cp: not replacing')
     fi
     rm -rf "/app/www/public/resources/database"
     ln -s "/config/www/xbackbone/resources/database" "/app/www/public/resources/database"
-fi
-
-if [[ ! -L "/app/www/public/resources/sessions" ]]; then
-    if [[ ! -L "/app/www/public/resources/sessions" ]]; then
-        cp -nR "/app/www/public/resources/sessions" "/config/www/xbackbone/resources/sessions" 2> >(grep -v 'cp: not replacing')
-    fi
-    rm -rf "/app/www/public/resources/sessions"
-    ln -s "/config/www/xbackbone/resources/sessions" "/app/www/public/resources/sessions"
-fi
-
-if [[ ! -L "/app/www/public/static/bootstrap" ]]; then
-    if [[ ! -L "/app/www/public/static/bootstrap" ]]; then
-        cp -nR "/app/www/public/static/bootstrap" "/config/www/xbackbone/static/bootstrap" 2> >(grep -v 'cp: not replacing')
-    fi
-    rm -rf "/app/www/public/static/bootstrap"
-    ln -s "/config/www/xbackbone/static/bootstrap" "/app/www/public/static/bootstrap"
 fi
 
 # Log migration messages
@@ -99,4 +75,6 @@ fi
 
 # permissions
 lsiown -R abc:abc \
-    /config
+    /config \
+    /app/www/public/resources/cache \
+    /app/www/public/resources/sessions
