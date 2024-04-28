@@ -18,7 +18,7 @@ busybox-binsh                           1.36.1-r15             apk
 c-ares                                  1.27.0-r0              apk             
 ca-certificates                         20240226-r0            apk             
 ca-certificates-bundle                  20240226-r0            apk             
-composer                                2.7.2                  binary          
+composer                                2.7.4                  binary          
 coreutils                               9.4-r2                 apk             
 coreutils-env                           9.4-r2                 apk             
 coreutils-fmt                           9.4-r2                 apk             
@@ -39,7 +39,6 @@ graham-campbell/guzzle-factory          v5.0.3                 php-composer
 guzzlehttp/guzzle                       7.8.1                  php-composer    
 guzzlehttp/promises                     1.5.3                  php-composer    
 guzzlehttp/psr7                         2.6.2                  php-composer    
-hiredis                                 1.2.0-r0               apk             
 http-interop/http-factory-guzzle        1.2.0                  php-composer    
 icu-data-en                             74.1-r0                apk             
 icu-libs                                74.1-r0                apk             
@@ -99,7 +98,7 @@ nano                                    7.2-r1                 apk
 ncurses-terminfo-base                   6.4_p20231125-r0       apk             
 netcat-openbsd                          1.226-r0               apk             
 nghttp2-libs                            1.58.0-r0              apk             
-nginx                                   1.24.0-r15             apk             
+nginx                                   1.24.0-r16             apk             
 nikic/fast-route                        v1.3.0                 php-composer    
 oniguruma                               6.9.9-r0               apk             
 openssl                                 3.1.4-r6               apk             
