@@ -31,7 +31,7 @@ findutils                               4.9.0-r5               apk
 firebase/php-jwt                        v6.4.0                 php-composer    
 freetype                                2.13.2-r0              apk             
 gdbm                                    1.23-r1                apk             
-git                                     2.43.0-r0              apk             
+git                                     2.43.4-r0              apk             
 google/auth                             v1.26.0                php-composer    
 google/cloud-core                       v1.49.4                php-composer    
 google/cloud-storage                    v1.30.2                php-composer    
