@@ -100,7 +100,7 @@ nano                                    8.0-r0                 apk
 ncurses-terminfo-base                   6.4_p20240420-r0       apk             
 netcat-openbsd                          1.226-r0               apk             
 nghttp2-libs                            1.62.0-r0              apk             
-nginx                                   1.26.0-r2              apk             
+nginx                                   1.26.1-r0              apk             
 nikic/fast-route                        v1.3.0                 php-composer    
 oniguruma                               6.9.9-r0               apk             
 openssl                                 3.3.0-r2               apk             
