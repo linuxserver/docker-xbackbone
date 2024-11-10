@@ -72,6 +72,7 @@ Example:
 
 For reverse proxying, remember to change the `base_url` in `/config/www/xbackbone/config.php` to your domain if you initially set up the application with a local url. E.g. `'base_url' => 'https://images.yourdomain.com',`
 
+ 
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
@@ -276,10 +277,10 @@ docker build \
   -t lscr.io/linuxserver/xbackbone:latest .
 ```
 
-The ARM variants can be built on x86_64 hardware using `multiarch/qemu-user-static`
+The ARM variants can be built on x86_64 hardware and vice versa using `lscr.io/linuxserver/qemu-static`
 
 ```bash
-docker run --rm --privileged multiarch/qemu-user-static:register --reset
+docker run --rm --privileged lscr.io/linuxserver/qemu-static --reset
 ```
 
 Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64`.
