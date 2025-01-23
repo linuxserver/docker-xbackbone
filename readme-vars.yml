@@ -7,6 +7,7 @@ project_logo: "https://raw.githubusercontent.com/SergiX44/XBackBone/master/docs/
 project_blurb: |
   [{{ project_name|capitalize }}]({{ project_url }}) is a simple, self-hosted, lightweight PHP file manager that support the instant sharing tool ShareX and *NIX systems. It supports uploading and displaying images, GIF, video, code, formatted text, and file downloading and uploading. Also have a web UI with multi user management, past uploads history and search support.
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_categories: "File Sharing"
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
