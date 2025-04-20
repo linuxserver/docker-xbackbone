@@ -159,7 +159,7 @@ slim/psr7                               1.5.1                  php-composer
 slim/slim                               4.9.0                  php-composer    
 spatie/dropbox-api                      1.21.2                 php-composer    
 spatie/flysystem-dropbox                1.2.3                  php-composer    
-sqlite-libs                             3.45.3-r1              apk             
+sqlite-libs                             3.45.3-r2              apk             
 ssl_client                              1.36.1-r29             apk             
 superbalist/flysystem-google-storage    7.2.2                  php-composer    
 symfony/deprecation-contracts           v2.5.4                 php-composer    
