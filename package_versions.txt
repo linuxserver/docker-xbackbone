@@ -16,7 +16,7 @@ bash                                    5.2.37-r0             apk
 brotli-libs                             1.1.0-r2              apk             
 busybox                                 1.37.0-r20            apk             
 busybox-binsh                           1.37.0-r20            apk             
-c-ares                                  1.34.5-r0             apk             
+c-ares                                  1.34.6-r0             apk             
 ca-certificates                         20250911-r0           apk             
 ca-certificates-bundle                  20250911-r0           apk             
 catatonit                               0.2.1-r0              apk             
@@ -168,7 +168,7 @@ symfony/polyfill-mbstring               v1.31.0               php-composer
 symfony/polyfill-php80                  v1.31.0               php-composer    
 symfony/polyfill-php81                  v1.31.0               php-composer    
 twig/twig                               v3.11.3               php-composer    
-tzdata                                  2025b-r0              apk             
+tzdata                                  2025c-r0              apk             
 utmps-libs                              0.1.3.1-r0            apk             
 xz-libs                                 5.8.1-r0              apk             
 zlib                                    1.3.1-r2              apk             
