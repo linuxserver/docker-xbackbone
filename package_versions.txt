@@ -41,7 +41,7 @@ google/crc32                            v0.1.0                php-composer
 graham-campbell/guzzle-factory          v5.0.3                php-composer    
 guzzlehttp/guzzle                       7.9.2                 php-composer    
 guzzlehttp/promises                     1.5.3                 php-composer    
-guzzlehttp/psr7                         2.7.0                 php-composer    
+guzzlehttp/psr7                         2.12.3                php-composer    
 http-interop/http-factory-guzzle        1.2.0                 php-composer    
 icu-data-en                             76.1-r1               apk             
 icu-libs                                76.1-r1               apk             
@@ -60,7 +60,7 @@ libcrypto3                              3.5.7-r0              apk
 libcurl                                 8.14.1-r2             apk             
 libdav1d                                1.5.1-r0              apk             
 libedit                                 20250104.3.1-r1       apk             
-libexpat                                2.7.5-r0              apk             
+libexpat                                2.8.1-r0              apk             
 libgcc                                  14.2.0-r6             apk             
 libice                                  1.1.2-r0              apk             
 libidn2                                 2.3.7-r0              apk             
@@ -94,7 +94,7 @@ linux-pam                               1.7.0-r4              apk
 logrotate                               3.21.0-r1             apk             
 maennchen/zipstream-php                 2.1.0                 php-composer    
 monolog/monolog                         1.27.1                php-composer    
-mtdowling/jmespath.php                  2.8.0                 php-composer    
+mtdowling/jmespath.php                  2.9.1                 php-composer    
 musl                                    1.2.5-r12             apk             
 musl-utils                              1.2.5-r12             apk             
 myclabs/php-enum                        1.8.5                 php-composer    
@@ -102,7 +102,7 @@ nano                                    8.4-r0                apk
 ncurses-terminfo-base                   6.5_p20250503-r0      apk             
 netcat-openbsd                          1.229.1-r0            apk             
 nghttp2-libs                            1.69.0-r0             apk             
-nginx                                   1.28.3-r3             apk             
+nginx                                   1.28.3-r4             apk             
 nikic/fast-route                        v1.3.0                php-composer    
 oniguruma                               6.9.10-r0             apk             
 openssl                                 3.5.7-r0              apk             
@@ -163,9 +163,9 @@ sqlite-libs                             3.49.2-r1             apk
 ssl_client                              1.37.0-r20            apk             
 superbalist/flysystem-google-storage    7.2.2                 php-composer    
 symfony/deprecation-contracts           v2.5.4                php-composer    
-symfony/polyfill-ctype                  v1.31.0               php-composer    
-symfony/polyfill-mbstring               v1.31.0               php-composer    
-symfony/polyfill-php80                  v1.31.0               php-composer    
+symfony/polyfill-ctype                  v1.37.0               php-composer    
+symfony/polyfill-mbstring               v1.38.2               php-composer    
+symfony/polyfill-php80                  v1.37.0               php-composer    
 symfony/polyfill-php81                  v1.31.0               php-composer    
 twig/twig                               v3.11.3               php-composer    
 tzdata                                  2026b-r0              apk             
