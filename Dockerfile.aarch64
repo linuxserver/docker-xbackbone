@@ -25,7 +25,7 @@ RUN \
     mkdir -p /app/www/public && \
   if [ -z ${XBACKBONE_RELEASE+x} ]; then \
     XBACKBONE_RELEASE=$(curl -sX GET "https://api.github.com/repos/SergiX44/XBackBone/releases/latest" \
-    | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+    | jq -r '.tag_name'); \
   fi && \
   curl -o \
     /tmp/xbackbone.zip -L \
